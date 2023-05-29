@@ -61,8 +61,8 @@ func (h *Handler) Store(c *gin.Context) {
 		})
 		return
 	}
-
-	if _, err := h.service.Store(book.ToEntity()); err != nil {
+	createdBook, err := h.service.Store(book.ToEntity())
+	if err != nil {
 		c.AbortWithStatusJSON(500, gin.H{
 			"error": "Something went wrong",
 		})
@@ -70,7 +70,7 @@ func (h *Handler) Store(c *gin.Context) {
 	}
 
 	c.JSON(201, gin.H{
-		"data": book,
+		"data": createdBook,
 	})
 }
 
@@ -128,6 +128,20 @@ func (h *Handler) Update(c *gin.Context) {
 	}
 
 	c.JSON(200, gin.H{
-		"data": book,
+		"data": foundBook,
+	})
+}
+
+func (h *Handler) Delete(c *gin.Context) {
+	id := c.Param("id")
+	if err := h.service.Delete(id); err != nil {
+		c.AbortWithStatusJSON(404, gin.H{
+			"error": "Book not found",
+		})
+		return
+	}
+
+	c.JSON(200, gin.H{
+		"message": "Book deleted successfully",
 	})
 }

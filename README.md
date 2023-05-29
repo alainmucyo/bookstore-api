@@ -34,6 +34,7 @@ Bookstore is an application that allows management of books and authors. It is b
 2. Generate a launch json file by clicking on the `Run` button on the right side of your VSCode IDE
 3. You can set the `PORT` you want to use in the `.env` file, if you don't set it the api will run on `3000` by default.
 4. Congratulations! You have successfully launched bookstore API!
+5. You can now test the API using Postman with attached postman collection.
 
 ### Launch with Docker
 

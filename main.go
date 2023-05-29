@@ -48,10 +48,12 @@ func router(usersHandler *users2.Handler, authorsHandler *authors2.Handler, book
 		s.GET("/authors/:id", authorsHandler.FindById)
 		s.POST("/authors", authorsHandler.Store)
 		s.PUT("/authors/:id", authorsHandler.Update)
+		s.DELETE("/authors/:id", authorsHandler.Delete)
 
 		// Books routes
 		s.POST("/books", booksHandler.Store)
 		s.PUT("/books/:id", booksHandler.Update)
+		s.DELETE("/books/:id", booksHandler.Delete)
 	}
 
 	return r

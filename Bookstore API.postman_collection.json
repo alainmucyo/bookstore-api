@@ -1,0 +1,481 @@
+{
+	"info": {
+		"_postman_id": "1598902c-ecb9-4006-a480-96103079f3b8",
+		"name": "Bookstore API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11889963"
+	},
+	"item": [
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Getting all books",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Alain MUCYO\",\n    \"email\":\"alainmucyo3@gmail.com\",\n    \"password\":\"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/books",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Store book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWxhaW4gTVVDWU8iLCJlbWFpbCI6ImFsYWlubXVjeW8zQGdtYWlsLmNvbSIsImlkIjoiMzhhN2MxNzYtZmUxOC0xMWVkLWJiN2ItNDI1ODc4MDhmYTNhIiwiZXhwIjoxNjg1NDA2MzA4fQ.sDLI_TbVOwdcqoDwSs7JvsNjbUoBOtQLnVTA7XdFMtk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Amazing book\",\n    \"author_id\": \"a9fe7808-8f99-4993-bf62-746f4d533ec1\",\n    \"published\": \"2023-01-01T02:00:00+02:00\",\n    \"price\": 100,\n    \"image_url\": \"https://media.gq.com/photos/5ad64204c8be07604e8b5f2f/1:1/w_1332,h_1332,c_limit/21-books-GQ-April-2018-041718-3x2.jpg\",\n    \"description\": \"This is an amazing book\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/books",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find one book",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWxhaW4gTVVDWU8iLCJlbWFpbCI6ImFsYWlubXVjeW8zQGdtYWlsLmNvbSIsImlkIjoiMzhhN2MxNzYtZmUxOC0xMWVkLWJiN2ItNDI1ODc4MDhmYTNhIiwiZXhwIjoxNjg1NDA2MzA4fQ.sDLI_TbVOwdcqoDwSs7JvsNjbUoBOtQLnVTA7XdFMtk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/books/5a8cd10b-e60a-4115-b6a8-77ced28ebbb8",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"5a8cd10b-e60a-4115-b6a8-77ced28ebbb8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWxhaW4gTVVDWU8iLCJlbWFpbCI6ImFsYWlubXVjeW8zQGdtYWlsLmNvbSIsImlkIjoiMzhhN2MxNzYtZmUxOC0xMWVkLWJiN2ItNDI1ODc4MDhmYTNhIiwiZXhwIjoxNjg1NDA2MzA4fQ.sDLI_TbVOwdcqoDwSs7JvsNjbUoBOtQLnVTA7XdFMtk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"title\": \"Amazing book updated\",\n            \"author_id\":\"a9fe7808-8f99-4993-bf62-746f4d533ec1\",\n            \n            \"published\": \"2023-01-01T02:00:00+02:00\",\n            \"price\": 100,\n            \"image_url\": \"https://media.gq.com/photos/5ad64204c8be07604e8b5f2f/1:1/w_1332,h_1332,c_limit/21-books-GQ-April-2018-041718-3x2.jpg\",\n            \"description\": \"This is an amazing book\"\n \n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/books/5a8cd10b-e60a-4115-b6a8-77ced28ebbb8",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"5a8cd10b-e60a-4115-b6a8-77ced28ebbb8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWxhaW4gTVVDWU8iLCJlbWFpbCI6ImFsYWlubXVjeW8zQGdtYWlsLmNvbSIsImlkIjoiMzhhN2MxNzYtZmUxOC0xMWVkLWJiN2ItNDI1ODc4MDhmYTNhIiwiZXhwIjoxNjg1NDA2MzA4fQ.sDLI_TbVOwdcqoDwSs7JvsNjbUoBOtQLnVTA7XdFMtk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"title\": \"Amazing book updated\",\n            \"author_id\":\"a9fe7808-8f99-4993-bf62-746f4d533ec1\",\n            \n            \"published\": \"2023-01-01T02:00:00+02:00\",\n            \"price\": 100,\n            \"image_url\": \"https://media.gq.com/photos/5ad64204c8be07604e8b5f2f/1:1/w_1332,h_1332,c_limit/21-books-GQ-April-2018-041718-3x2.jpg\",\n            \"description\": \"This is an amazing book\"\n \n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/books/5a8cd10b-e60a-4115-b6a8-77ced28ebbb8",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"books",
+								"5a8cd10b-e60a-4115-b6a8-77ced28ebbb8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authors",
+			"item": [
+				{
+					"name": "Get all authors",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWxhaW4gTVVDWU8iLCJlbWFpbCI6ImFsYWlubXVjeW8zQGdtYWlsLmNvbSIsImlkIjoiMzhhN2MxNzYtZmUxOC0xMWVkLWJiN2ItNDI1ODc4MDhmYTNhIiwiZXhwIjoxNjg1NDA2MzA4fQ.sDLI_TbVOwdcqoDwSs7JvsNjbUoBOtQLnVTA7XdFMtk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/authors",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create an author",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWxhaW4gTVVDWU8iLCJlbWFpbCI6ImFsYWlubXVjeW8zQGdtYWlsLmNvbSIsImlkIjoiMzhhN2MxNzYtZmUxOC0xMWVkLWJiN2ItNDI1ODc4MDhmYTNhIiwiZXhwIjoxNjg1NDA2MzA4fQ.sDLI_TbVOwdcqoDwSs7JvsNjbUoBOtQLnVTA7XdFMtk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\":\"Alain\",\n    \"last_name\":\"MUCYO\",\n    \"bio\":\"Amazing writter\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/authors",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update author",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWxhaW4gTVVDWU8iLCJlbWFpbCI6ImFsYWlubXVjeW8zQGdtYWlsLmNvbSIsImlkIjoiMzhhN2MxNzYtZmUxOC0xMWVkLWJiN2ItNDI1ODc4MDhmYTNhIiwiZXhwIjoxNjg1NDA2MzA4fQ.sDLI_TbVOwdcqoDwSs7JvsNjbUoBOtQLnVTA7XdFMtk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\":\"Alain 123\",\n    \"last_name\":\"MUCYO\",\n    \"bio\":\"Amazing writter\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/authors/8eabbee7-d971-4950-98a4-7a670dd74e66",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"authors",
+								"8eabbee7-d971-4950-98a4-7a670dd74e66"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one author",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWxhaW4gTVVDWU8iLCJlbWFpbCI6ImFsYWlubXVjeW8zQGdtYWlsLmNvbSIsImlkIjoiMzhhN2MxNzYtZmUxOC0xMWVkLWJiN2ItNDI1ODc4MDhmYTNhIiwiZXhwIjoxNjg1NDA2MzA4fQ.sDLI_TbVOwdcqoDwSs7JvsNjbUoBOtQLnVTA7XdFMtk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/authors/8eabbee7-d971-4950-98a4-7a670dd74e66",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"authors",
+								"8eabbee7-d971-4950-98a4-7a670dd74e66"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete author",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQWxhaW4gTVVDWU8iLCJlbWFpbCI6ImFsYWlubXVjeW8zQGdtYWlsLmNvbSIsImlkIjoiMzhhN2MxNzYtZmUxOC0xMWVkLWJiN2ItNDI1ODc4MDhmYTNhIiwiZXhwIjoxNjg1NDA2MzA4fQ.sDLI_TbVOwdcqoDwSs7JvsNjbUoBOtQLnVTA7XdFMtk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/authors/8eabbee7-d971-4950-98a4-7a670dd74e66",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"authors",
+								"8eabbee7-d971-4950-98a4-7a670dd74e66"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"alainmucyo3@gmail.com\",\n    \"password\":\"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Alain MUCYO\",\n    \"email\":\"alainmucyo3@gmail.com\",\n    \"password\":\"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

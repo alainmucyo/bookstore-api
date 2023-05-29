@@ -10,7 +10,7 @@ type Book struct {
 	Id          uuid.UUID `gorm:"type:uuid;primary_key;default:uuid_generate_v4()" json:"id"`
 	Title       string    `gorm:"type:varchar(255);not null" json:"title"`
 	AuthorID    uuid.UUID `gorm:"type:uuid;not null;column:author_id" json:"-"`
-	Author      Author    `json:"author" gorm:"foreignKey:AuthorID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
+	Author      Author    `json:"author,omitempty" gorm:"foreignKey:AuthorID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
 	Published   time.Time `gorm:"not null" json:"published"`
 	Price       float64   `gorm:"type:decimal(10,2);not null;default:0.0" json:"price"`
 	ImageUrl    string    `gorm:"type:varchar(255)" json:"image_url"`
