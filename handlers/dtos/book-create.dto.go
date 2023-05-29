@@ -13,15 +13,12 @@ func init() {
 }
 
 type BookCreateDTO struct {
-	Title string `json:"title" validate:"required,min=2"`
-
-	AuthorID string `json:"author_id" validate:"required"`
-
-	Published time.Time `json:"published" validate:"required"`
-
-	Price float64 `json:"price" validate:"required,gte=0"`
-
-	ImageUrl string `json:"image_url" validate:"required,url"`
+	Title       string    `json:"title" validate:"required,min=2"`
+	AuthorID    string    `json:"author_id" validate:"required"`
+	Published   time.Time `json:"published" validate:"required"`
+	Price       float64   `json:"price" validate:"required,gte=0"`
+	ImageUrl    string    `json:"image_url" validate:"required,url"`
+	Description string    `json:"description"`
 }
 
 func (b *BookCreateDTO) Validate() error {
@@ -66,9 +63,11 @@ func (b *BookCreateDTO) Validate() error {
 func (b *BookCreateDTO) ToEntity() entities.Book {
 	authorIdUUID, _ := uuid.Parse(b.AuthorID)
 	return entities.Book{
-		Title:     b.Title,
-		AuthorID:  authorIdUUID,
-		Published: b.Published,
-		Price:     b.Price,
+		Title:       b.Title,
+		AuthorID:    authorIdUUID,
+		Published:   b.Published,
+		Price:       b.Price,
+		ImageUrl:    b.ImageUrl,
+		Description: b.Description,
 	}
 }

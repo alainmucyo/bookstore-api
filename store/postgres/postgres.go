@@ -2,6 +2,7 @@ package postgres
 
 import (
 	"bookstore/core/environment"
+	"bookstore/store/entities"
 	"fmt"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -23,7 +24,7 @@ func New(env *environment.Environment) *Database {
 }
 
 func (db Database) Migrate() {
-	err := db.DB.AutoMigrate()
+	err := db.DB.AutoMigrate(entities.Book{}, entities.Author{}, entities.User{})
 	if err != nil {
 		fmt.Println("Failed to migrate tables")
 		fmt.Println(err.Error())

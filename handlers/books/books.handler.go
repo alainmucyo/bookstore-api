@@ -48,6 +48,7 @@ func (h *Handler) FindById(c *gin.Context) {
 func (h *Handler) Store(c *gin.Context) {
 	var book dtos.BookCreateDTO
 	if err := c.BindJSON(&book); err != nil {
+		println(err.Error())
 		c.AbortWithStatusJSON(400, gin.H{
 			"error": "Invalid JSON object",
 		})
